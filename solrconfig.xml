@@ -167,6 +167,7 @@
          Lucene will flush based on whichever limit is hit first.  -->
     <!-- <ramBufferSizeMB>100</ramBufferSizeMB> -->
     <!-- <maxBufferedDocs>1000</maxBufferedDocs> -->
+    <ramBufferSizeMB>100</ramBufferSizeMB>
 
     <!-- Expert: Merge Policy
          The Merge Policy in Lucene controls how merging of segments is done.
@@ -192,6 +193,7 @@
     <!--
     <mergeFactor>10</mergeFactor>
       -->
+    <mergeFactor>20</mergeFactor>
 
     <!-- Expert: Merge Scheduler
          The Merge Scheduler in Lucene controls how merges are
@@ -343,11 +345,14 @@
          If the updateLog is enabled, then it's highly recommended to
          have some sort of hard autoCommit to limit the log size.
       -->
+
      <autoCommit>
        <maxDocs>200</maxDocs>
        <maxTime>2000</maxTime>
        <openSearcher>true</openSearcher>
      </autoCommit>
+
+
 
     <!-- softAutoCommit is like autoCommit except it causes a
          'soft' commit which only ensures that changes are visible
